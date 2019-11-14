@@ -1,5 +1,5 @@
-﻿{
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "adminUsername": { "type": "string" },
@@ -41,7 +41,6 @@
     "ExchIP":"10.0.0.",
     "DNSServer":"[parameters('adNicIPAddress')]",
     "domainJoinOptions":"3",
-    "vmName":"AdminServer",
     "OUName":"ou=Testou,",
     "Toplevel":"de",
     "ouPath":"[Concat(variables('OUName'),'dc=',parameters('DnsPrefix'),',','dc=',variables('Toplevel'))]",
@@ -146,14 +145,14 @@
     {
       "apiVersion": "2015-06-15",
       "type":"Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1)), '/' ,variables('extensionName'))]",
+      "name": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '/' ,variables('extensionName'))]",
       "location":"[parameters('location')]",
       "copy": {
         "name": "extCount",
         "count": "[parameters('virtualMachineCount')]"
       },
       "dependsOn": [
-        "[resourceId('Microsoft.compute/VirtualMachines', concat(parameters('virtualMachineNamePrefix'), copyIndex(1))]"
+        "[resourceId('Microsoft.compute/VirtualMachines', concat(parameters('virtualMachineNamePrefix'), copyIndex(1)))]"
       ],
       "properties":{
         "publisher": "Microsoft.Compute",
