@@ -119,7 +119,7 @@
             "version": "latest"
           },
           "osDisk": {
-            "name": "myManagedOSDisk",
+            "name": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1), 'OSDisk')]",
             "caching": "ReadWrite",
             "createOption": "FromImage"
           }
