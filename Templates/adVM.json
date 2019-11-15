@@ -90,6 +90,7 @@
                   "lun": 0,
                   "name": "[concat(Variables('vmName'),'_Daten')]",
                   "createOption": "Empty",
+                  "diskSizeGB":20,
                   "managedDisk": {
                       "storageAccountType":"Standard_LRS"
                   }

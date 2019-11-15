@@ -128,6 +128,7 @@
                   "lun": 0,
                   "name": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '_Daten')]",
                   "createOption": "Empty",
+                  "diskSizeGB":20,
                   "managedDisk": {
                       "storageAccountType":"Standard_LRS"
                   }
