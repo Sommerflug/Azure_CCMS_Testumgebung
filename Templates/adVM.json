@@ -91,6 +91,7 @@
                   "name": "[concat(Variables('vmName'),'_Daten')]",
                   "createOption": "Attach",
                   "managedDisk": {
+                      "id": "[concat(variables('vmName'),'-datadisk')]",
                       "storageAccountType":"Standard_LRS"
                   }
               }
