@@ -84,7 +84,17 @@
             "name": "myManagedOSDisk",
             "caching": "ReadWrite",
             "createOption": "FromImage"
-          }
+          },
+          "dataDisks": [
+              {
+                  "lun": 0,
+                  "name": "[concat(Variables('vmName'),'_Daten')]",
+                  "createOption": "Empty",
+                  "managedDisk": {
+                      "storageAccountType":"Standard_LRS"
+                  }
+              }
+          ]
         },
         "osProfile": {
           "computerName": "AdminServer",
