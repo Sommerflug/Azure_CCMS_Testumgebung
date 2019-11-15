@@ -127,7 +127,7 @@
               {
                   "lun": 0,
                   "name": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '_Daten')]",
-                  "createOption": "Emtpy",
+                  "createOption": "Empty",
                   "managedDisk": {
                       "storageAccountType":"Standard_LRS"
                   }
