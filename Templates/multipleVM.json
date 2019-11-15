@@ -122,7 +122,17 @@
             "name": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1), 'OSDisk')]",
             "caching": "ReadWrite",
             "createOption": "FromImage"
-          }
+          },
+          "dataDisks": [
+              {
+                  "lun": 0,
+                  "name": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '_Daten')]",
+                  "createOption": "Attach",
+                  "managedDisk": {
+                      "storageAccountType":"Standard_LRS"
+                  }
+              }
+          ]
         },
         "osProfile": {
           "computerName": "[concat(parameters('virtualMachineNamePrefix'),copyIndex(1))]",
