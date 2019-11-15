@@ -4,6 +4,7 @@
   "parameters": {
     "adminUsername": { "type": "string" },
     "adminPassword": { "type": "securestring" },
+    "VnetResourceID":{"type": "string"},
     "DnsPrefix":{"type": "string"},
     "Subnet":{"type": "string"},
     "adNicIPAddress":{"type": "string"},
