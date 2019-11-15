@@ -129,6 +129,7 @@
                   "name": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '_Daten')]",
                   "createOption": "Attach",
                   "managedDisk": {
+                      "id": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '-datadisk')]",
                       "storageAccountType":"Standard_LRS"
                   }
               }
