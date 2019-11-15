@@ -89,9 +89,8 @@
               {
                   "lun": 0,
                   "name": "[concat(Variables('vmName'),'_Daten')]",
-                  "createOption": "Attach",
+                  "createOption": "Empty",
                   "managedDisk": {
-                      "id": "[concat(variables('vmName'),'-datadisk')]",
                       "storageAccountType":"Standard_LRS"
                   }
               }
